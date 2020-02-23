@@ -1,0 +1,53 @@
+<section id="main-content">
+    <section class="wrapper" ng-controller="ProdutoController as produtoController">
+        <div class="table-responsive">
+
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Produto</label>
+                    <input type="text" class="form-control box-search" ng-model="nome" placeholder="Nome">
+                </div>
+                <div class="col-md-4">
+                    <label>Descrição</label>
+                    <input type="text" class="form-control box-search" ng-model="descricao" placeholder="Descrição">
+                </div>
+                <div class="col-md-2">
+                    <label>Preço</label>
+                    <input type="number" class="form-control box-search" ng-model="preco" placeholder="Preço">
+                </div>
+                <div class="col-md-2" style="margin: 30px; margin-left: 10px">
+                    <i class="fa fa-plus pointer btn-opcoes" ng-click="produtoController.adicionarProduto()"></i>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-default" style="margin-top: 5px" ng-click="produtoController.limparCampos()">Limpar Campos</button>
+
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                        <th width="5%"></th>
+                        <th width="5%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="tc in produtoController.produtos|itemsPerPage:5" current-page="currentPage">
+                        <td>{{tc.name}}</td>
+                        <td>{{tc.description}}</td>
+                        <td>{{tc.price}}</td>
+                        <td>
+                            <i class="fa fa-pencil pointer btn-opcoes" ng-click="produtoController.editarProduto($index)"></i>
+                            <i class="fa fa-trash pointer btn-opcoes" ng-click="produtoController.deletarProduto($index)"></i>
+                        </td>
+                        </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"> </dir-pagination-controls>
+        </div>
+    </section>
+</section>

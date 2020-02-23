@@ -1,0 +1,31 @@
+<section id="main-content">
+    <section class="wrapper" ng-controller="CompraController as compraController">
+        <div class="table-responsive">
+
+            <label>ID da compra</label>
+            <div>
+                <input type="text" class="form-control box-search" style="width: 200px; display: inline" ng-model="id" placeholder="ID">
+                <i class="fa fa-search pointer btn-opcoes" style="margin-left: 10px" ng-click="compraController.buscarPorId()"></i>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Qtd</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="tc in compraController.ordens|itemsPerPage:5" current-page="currentPage">
+                        <td>{{tc.nome}}</td>
+                        <td>{{tc.quantidade}}</td>
+                        <td>{{tc.total}}</td>
+                        </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"> </dir-pagination-controls>
+        </div>
+    </section>
+</section>

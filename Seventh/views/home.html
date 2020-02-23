@@ -1,0 +1,34 @@
+<section id="main-content">
+	<section class="wrapper" ng-controller="HomeController as homeController">
+        <div class="table-responsive" >
+
+        <input type="text" ng-model="nomeprodutoprocura"
+            class="form-control box-search" placeholder="Nome">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th width="5%">Adicionar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate="tc in homeController.produtos|filter:nomeprodutoprocura|itemsPerPage:5" current-page="currentPage">
+                    <td>{{tc.name}}</td>
+                    <td>{{tc.description}}</td>
+                    <td><span> <input type="number" class="editable-cell goright" ng-model="tc.quantidade" />
+                    <td><i class="fa fa-plus pointer btn-opcoes" ng-click="homeController.adicionarProdutoNaCesta(tc, $index)"></i></td>
+                </span></td>
+                </tr>
+
+                
+
+            </tbody>
+        </table>
+        <dir-pagination-controls max-size="5" direction-links="true"
+            boundary-links="true"> </dir-pagination-controls>
+    </div>
+	</section>
+</section>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>S-Shop</title>
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet">
+    <link href="/datapicker-bootstrap/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+    <link href="/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet">
+    <link href="/css/fullcalendar.min.css" rel="stylesheet">
+    <link href="/css/fullcalendar.print.min.css" rel="stylesheet" media='print'>
+    <link href="/css/scheduler.min.css" rel="stylesheet">
+    <link href="/css/angular-material.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="shortcut icon" href="/img/cart-plus-solid.png" type="image/x-icon" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <section id="container" ng-app="S-Shop">
+        <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+            <div class="sidebar-toggle-box">
+                <div id="toggle-button" class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <div ng-controller="IndexController as indexController">
+                <a href="#/" class="logo">
+                    <i class="fa fa-cart-plus pointer btn-opcoes"></i>
+                    
+                <!--logo end-->
+            </div>
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+
+                </ul>
+                <!--  notification end -->
+            </div>
+        </header>
+        <!--header end-->
+
+        <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        <section id="sidebar">
+            <aside>
+                <div ng-controller="IndexController as indexController">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu" id="nav-accordion">
+
+                        <br/>
+                        <li class="sub-menu" style="border-top: 1px solid #ddd; padding-top: 5px;">
+                            <a id="item-dashbard" href="#/">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu" style="border-top: 1px solid #ddd; padding-top: 5px;">
+                            <a id="item-dashbard" href="#/cesta">
+                                <span>Cesta</span>
+                                <span class="badge badge-light">{{totalCarrinho}}</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu" style="border-top: 1px solid #ddd; padding-top: 5px;">
+                            <a id="item-dashbard" href="#/produtos">
+                                <span>Produtos</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu" style="border-top: 1px solid #ddd; padding-top: 5px;">
+                            <a id="item-dashbard" href="#/compras">
+                                <span>Compras</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+        </section>
+
+        <!--sidebar end-->
+
+        <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+
+                <div id="conteudo" ng-view></div>
+
+            </section>
+        </section>
+
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+        </footer>
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/Chart.min.js"></script>
+    <script type="text/javascript" src="/js/configuracoes.js"></script>
+    <script type="text/javascript" src="/datapicker-bootstrap/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="/datapicker-bootstrap/bootstrap-datepicker.pt-BR.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/js/moment.js"></script>
+    <script type="text/javascript" src="/js/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="/js/scheduler.min.js"></script>
+    <script type="text/javascript" src="/js/locale-all.js"></script>
+    <script type="text/javascript" src="/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+
+    <script type="text/javascript" src="/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/js/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="/js/angular/angular-material.min.js"></script>
+    <script type="text/javascript" src="/js/angular/angular-aria.min.js"></script>
+    <script type="text/javascript" src="/js/angular/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
+
+    <script type="text/javascript" src="/js/material.min.js"></script>
+    <script type="text/javascript" src="/js/dirPagination.js"></script>
+
+
+    <script type="text/javascript" src="/js/angular/angular-locale_pt-br.js"></script>
+
+    <script type="text/javascript" src="/services/produto-service.js"></script>
+    <script type="text/javascript" src="/services/cesta-service.js"></script>
+    <script type="text/javascript" src="/services/compra-service.js"></script>
+
+    <script type="text/javascript" src="/controllers/index-controller.js"></script>
+    <script type="text/javascript" src="/controllers/home-controller.js"></script>
+    <script type="text/javascript" src="/controllers/cesta-controller.js"></script>
+    <script type="text/javascript" src="/controllers/produto-controller.js"></script>
+    <script type="text/javascript" src="/controllers/compra-controller.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<section id="main-content">
+        <section class="wrapper" ng-controller="CestaController as cestaController">
+            <div class="table-responsive" >
+    
+            <input type="text"
+                class="form-control box-search" ng-model="nome" placeholder="Nome">
+    
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Qtd</th>
+                        <th>Produto</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th width="5%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="tc in cestaController.itemsCarrinho|itemsPerPage:3" current-page="currentPage">
+                        <td><span> <input type="number" class="editable-cell goright" ng-change="cestaController.alterarQtdProduto($index)" ng-model="tc.quantidade" />
+                        <td>{{tc.name}}</td>
+                        <td>{{tc.description}}</td>
+                        <td>{{tc.totalItem}}</td>
+                        <td><i class="fa fa-trash pointer btn-opcoes"	ng-click="cestaController.deletarProduto($index)"></i></td>
+                    </span></td>
+                    </tr>                       
+                </tbody>
+            </table>
+            <label class="textTotal">Total:{{valorTotal}}</label>
+            <dir-pagination-controls max-size="5" direction-links="true"
+                boundary-links="true"> </dir-pagination-controls>           
+        </div>
+        <button type="button" class="btn btn-default" ng-click="cestaController.finalizarCompra()">Finalizar Compra</button>
+        </section>
+    </section>

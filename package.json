@@ -1,0 +1,26 @@
+{
+    "name": "S-Shop",
+    "version": "0.0.1",
+    "description": "Sistema de Vendas Seventh",
+    "dependencies": {
+        "express": "*"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    },
+    "engine": "node >=0.6.x",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "fernando",
+    "license": "free",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "/"
+}
